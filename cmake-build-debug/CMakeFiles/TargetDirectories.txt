@@ -1,0 +1,3 @@
+/media/kanishk/New Volume1/Kanishk_Compiler/cmake-build-debug/CMakeFiles/Kanishk_Compiler.dir
+/media/kanishk/New Volume1/Kanishk_Compiler/cmake-build-debug/CMakeFiles/edit_cache.dir
+/media/kanishk/New Volume1/Kanishk_Compiler/cmake-build-debug/CMakeFiles/rebuild_cache.dir
