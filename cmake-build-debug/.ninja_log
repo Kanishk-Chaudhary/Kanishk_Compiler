@@ -1,22 +1,9 @@
-# ninja log v5
-2	364	1716010116960242700	CMakeFiles/Kanishk_Compiler.dir/src/main.cpp.o	eacc249491826886
-2	88	1716010203761122400	build.ninja	ca0ddfba12ac60bc
-376	507	1716010117102155600	Kanishk_Compiler	93c2b577e22e3e7
-4	557	1716010236556619600	CMakeFiles/Kanishk_Compiler.dir/src/main.cpp.o	eacc249491826886
-557	914	1716010236913636100	Kanishk_Compiler	93c2b577e22e3e7
-4	482	1716010801251301300	CMakeFiles/Kanishk_Compiler.dir/src/main.cpp.o	eacc249491826886
-483	617	1716010801384526400	Kanishk_Compiler	93c2b577e22e3e7
-4	554	1716011293932867100	CMakeFiles/Kanishk_Compiler.dir/src/main.cpp.o	eacc249491826886
-556	688	1716011294065403100	Kanishk_Compiler	93c2b577e22e3e7
-4	427	1716011429684075500	CMakeFiles/Kanishk_Compiler.dir/src/main.cpp.o	eacc249491826886
-428	560	1716011429815801200	Kanishk_Compiler	93c2b577e22e3e7
-3	445	1716011532489463600	CMakeFiles/Kanishk_Compiler.dir/src/main.cpp.o	eacc249491826886
-446	580	1716011532624101400	Kanishk_Compiler	93c2b577e22e3e7
-4	434	1716011607963681800	CMakeFiles/Kanishk_Compiler.dir/src/main.cpp.o	eacc249491826886
-435	576	1716011608104686000	Kanishk_Compiler	93c2b577e22e3e7
-5	705	1716012150238161500	CMakeFiles/Kanishk_Compiler.dir/src/main.cpp.o	eacc249491826886
-706	837	1716012150370048600	Kanishk_Compiler	93c2b577e22e3e7
-4	552	1716014311553252300	CMakeFiles/Kanishk_Compiler.dir/src/main.cpp.o	eacc249491826886
-553	775	1716014311776198700	Kanishk_Compiler	93c2b577e22e3e7
-4	512	1716014393139100400	CMakeFiles/Kanishk_Compiler.dir/src/main.cpp.o	eacc249491826886
-512	676	1716014393303155200	Kanishk_Compiler	93c2b577e22e3e7
+# ninja log v6
+364	1952	7400370375319617	CMakeFiles/Kanishk_Compiler.dir/src/main.cpp.obj	e704b5533d768a51
+1960	2580	7400370391281529	Kanishk_Compiler.exe	6873339e89d3c9f3
+44	1254	7400372958090853	CMakeFiles/Kanishk_Compiler.dir/src/main.cpp.obj	e704b5533d768a51
+1255	1479	7400372970209364	Kanishk_Compiler.exe	6873339e89d3c9f3
+22	2313	7400388807024030	CMakeFiles/Kanishk_Compiler.dir/src/main.cpp.obj	e704b5533d768a51
+2314	3022	7400388829937055	Kanishk_Compiler.exe	6873339e89d3c9f3
+21	2237	7400390785226049	CMakeFiles/Kanishk_Compiler.dir/src/main.cpp.obj	e704b5533d768a51
+2238	2579	7400390807401939	Kanishk_Compiler.exe	6873339e89d3c9f3

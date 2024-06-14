@@ -2,7 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "Kanishk_Compiler"
+			"path" : "Kanishk_Compiler.exe"
+		},
+		{
+			"path" : "Kanishk_Compiler.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -35,7 +38,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -fdiagnostics-color=always"
+					"fragment" : "-O2 -g -DNDEBUG -fdiagnostics-color=always"
 				}
 			],
 			"language" : "CXX",
@@ -59,18 +62,22 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "-g",
+				"fragment" : "-O2 -g -DNDEBUG",
 				"role" : "flags"
 			},
 			{
 				"fragment" : "",
 				"role" : "flags"
+			},
+			{
+				"fragment" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32",
+				"role" : "libraries"
 			}
 		],
 		"language" : "CXX"
 	},
 	"name" : "Kanishk_Compiler",
-	"nameOnDisk" : "Kanishk_Compiler",
+	"nameOnDisk" : "Kanishk_Compiler.exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -84,6 +91,13 @@
 			[
 				0
 			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				1
+			]
 		}
 	],
 	"sources" : 
@@ -93,6 +107,11 @@
 			"compileGroupIndex" : 0,
 			"path" : "src/main.cpp",
 			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/tokenization.h",
+			"sourceGroupIndex" : 1
 		}
 	],
 	"type" : "EXECUTABLE"
