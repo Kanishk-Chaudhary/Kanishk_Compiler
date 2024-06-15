@@ -5,4 +5,6 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_executable(Kanishk_Compiler src/main.cpp
         src/tokenization.h
+        src/parser.h
+        src/generation.h
 )

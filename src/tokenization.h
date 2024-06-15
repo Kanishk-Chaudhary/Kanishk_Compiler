@@ -6,7 +6,7 @@
 #include <iostream>
 #include <cstdlib>
 
-enum class TokenType {exit, int_lit, semi };
+enum class TokenType {exit, int_lit, semi, open_paren, close_paren };
 
 struct Token
 {
@@ -14,7 +14,7 @@ struct Token
     std::optional<std::string> value{};
 };
 
-class Tokenizer {
+class [[maybe_unused]] Tokenizer {
 public:
     inline explicit Tokenizer(std::string src)
     :m_src(std::move(src)){
@@ -41,13 +41,21 @@ public:
                 }
             } else if (std::isdigit(peek().value())) {
                 buf.push_back(consume());
-                while(peek().has_value()&& std::isdigit(peek().value())){
+                while(peek().has_value() && std::isdigit(peek().value())){
                     buf.push_back(consume());
                 }
                 tokens.push_back({TokenType::int_lit, buf});
                 buf.clear();
             }
-            else if (peek().value()==';'){
+            else if (peek().value() == '('){
+                consume();
+                tokens.push_back({.type = TokenType::open_paren});
+            }
+            else if (peek().value() == ')'){
+                consume();
+                tokens.push_back({.type = TokenType::close_paren});
+            }
+            else if (peek().value() == ';'){
                 consume();
                 tokens.push_back({TokenType::semi});
                 continue;
@@ -65,18 +73,18 @@ public:
     }
 
 private:
-    [[nodiscard]] std::optional<char> peek(int ahead = 1) const {
-        if (m_index + ahead > m_src.length()) {
+    [[nodiscard]] inline std::optional<char> peek() const {
+        if (m_index + 0 >= m_src.length()) {
             return {};
         } else {
-            return m_src.at(m_index);
+            return m_src.at(m_index + 0);
         }
     }
 
-    char consume() {
+    inline char consume() {
         return m_src.at(m_index++);
     }
 
     const std::string m_src;
-    int m_index=0;
+    size_t m_index=0;
 };

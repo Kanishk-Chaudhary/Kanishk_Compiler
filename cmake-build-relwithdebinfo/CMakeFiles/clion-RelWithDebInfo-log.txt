@@ -1,4 +1,4 @@
 C:\Users\opkan\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_MAKE_PROGRAM=C:/Users/opkan/AppData/Local/Programs/CLion/bin/ninja/win/x64/ninja.exe -G Ninja -S E:\Kanishk_Compiler -B E:\Kanishk_Compiler\cmake-build-relwithdebinfo
--- Configuring done (1.2s)
--- Generating done (0.1s)
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
 -- Build files have been written to: E:/Kanishk_Compiler/cmake-build-relwithdebinfo

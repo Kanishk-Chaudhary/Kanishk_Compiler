@@ -4,31 +4,9 @@
 #include <vector>
 #include <optional>
 
-#include "tokenization.h"
-
-std::string tokens_to_asm(const std::vector<Token> &tokens)
-{
-    std::stringstream output;
-    output << "global _start\n_start:\n";
-
-    for (size_t i = 0; i < tokens.size(); i++)
-    {
-        const Token &token = tokens.at(i);
-        if (token.type == TokenType::exit)
-        {
-            if (i + 2 < tokens.size() && tokens.at(i + 1).type == TokenType::int_lit &&
-                tokens.at(i + 2).type == TokenType::semi)
-            {
-                output << " mov rax, 60\n";
-                output << " mov rdi, " << tokens.at(i + 1).value.value_or("0") << "\n";
-
-                output << " syscall\n";
-                i += 2;
-            }
-        }
-    }
-    return output.str();
-}
+#include "./tokenization.h"
+#include "./parser.h"
+#include "./generation.h"
 
 int main(int argc, char *argv[])
 {
@@ -48,16 +26,22 @@ int main(int argc, char *argv[])
     }
     Tokenizer tokenizer(std::move(contents));
     std::vector<Token> tokens = tokenizer.tokenize();
+    Parser parser(std::move(tokens));
+    std::optional<NodeExit> tree = parser.parse();
 
-    std::cout << tokens_to_asm(tokens) << std::endl;
-
-    {
-        std::fstream file("out.asm", std::ios::out);
-        file << tokens_to_asm(tokens);
+    if (!tree.has_value()) {
+        std::cerr << "No exit statement found" << std::endl;
+        return EXIT_FAILURE;
     }
 
-    system("nasm -felf64 out.asm");
-    system("ld -o out out.o");
+    Generation generator(tree.value());
+    {
+        std::fstream file("out.asm", std::ios::out);
+        file << generator.generate();
+    }
+
+    system("nasm -f win64 out.asm -o out.obj");
+    system("ld -o out.exe out.obj");
 
     return EXIT_SUCCESS;
 }
