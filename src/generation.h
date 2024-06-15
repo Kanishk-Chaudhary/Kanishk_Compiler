@@ -1,0 +1,8 @@
+//
+// Created by opkan on 14-06-2024.
+//
+
+#ifndef KANISHK_COMPILER_GENERATION_H
+#define KANISHK_COMPILER_GENERATION_H
+
+#endif //KANISHK_COMPILER_GENERATION_H
